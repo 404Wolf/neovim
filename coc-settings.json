@@ -1,0 +1,10 @@
+{
+  "languageserver": {
+    "nixd": {
+      "command": "nixd",
+      "rootPatterns": [".nixd.json"],
+      "filetypes": ["nix"]
+    }
+  }
+}
+
