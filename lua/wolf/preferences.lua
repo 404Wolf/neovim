@@ -5,4 +5,3 @@ vim.o.tabstop = tab_amount
 vim.o.expandtab = true
 
 vim.cmd('colorscheme onedark_dark')
-

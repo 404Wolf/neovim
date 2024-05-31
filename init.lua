@@ -23,7 +23,8 @@ require("lazy").setup({
     dependencies = { 'nvim-tree/nvim-web-devicons' },
   },
   {
-    'nvim-telescope/telescope.nvim', tag = '0.1.6',
+    'nvim-telescope/telescope.nvim',
+    tag = '0.1.6',
     dependencies = { 'nvim-lua/plenary.nvim' },
   },
   {
@@ -41,14 +42,14 @@ require("lazy").setup({
   {
     'goolord/alpha-nvim',
     dependencies = { 'nvim-tree/nvim-web-devicons' },
-    config = function ()
-        require('alpha').setup(require('alpha.themes.startify').config)
+    config = function()
+      require('alpha').setup(require('alpha.themes.startify').config)
     end
-  };
+  },
   {
     'romgrk/barbar.nvim',
     dependencies = {
-      'lewis6991/gitsigns.nvim', -- OPTIONAL: for git status
+      'lewis6991/gitsigns.nvim',     -- OPTIONAL: for git status
       'nvim-tree/nvim-web-devicons', -- OPTIONAL: for file icons
     },
     init = function() vim.g.barbar_auto_setup = false end,
@@ -70,4 +71,3 @@ require("lazy").setup({
 
 -- Require other packages
 require("wolf")
-
