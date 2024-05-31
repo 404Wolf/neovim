@@ -3,8 +3,9 @@
     "nixd": {
       "command": "nixd",
       "rootPatterns": [ ".nixd.json" ],
-      "filetypes": [ "nix" ]
+      "filetypes": [ "nix" ],
     },
+    "nix.formatting.provider": "nixfmt",
     "python.formatting.provider": "none"
   }
 }

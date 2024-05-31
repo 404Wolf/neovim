@@ -7,7 +7,6 @@ vim.g.coc_global_extensions = {
   'coc-sumneko-lua',
   '@yaegassy/coc-black-formatter',
 }
-vim.cmd(":CocCommand black-formatter.installServer")
 
 -- Some servers have issues with backup files, see #649
 vim.opt.backup = false
@@ -63,10 +62,20 @@ keyset("n", "K", '<CMD>lua _G.show_docs()<CR>', { silent = true })
 -- Symbol renaming
 keyset("n", "<leader>rn", "<Plug>(coc-rename)", { silent = true })
 
+function formatBasedOnLanguage()
+  local fileLanguage = vim.bo.filetype
+  local absolutePath = vim.fn.expand('%:p')
+  if fileLanguage == "nix" then
+    vim.fn.system("nixfmt " .. absolutePath)
+    vim.cmd("edit!")  -- Reload after formatting
+  else
+    vim.cmd("CocFormat")
+  end
+end
+
+vim.api.nvim_create_user_command("Format", formatBasedOnLanguage, {})
 
 -- Formatting selected code
-keyset("x", "<leader>f", "<Plug>(coc-format-selected)", { silent = true })
-keyset("n", "<leader>f", "<Plug>(coc-format-selected)", { silent = true })
 keyset("n", "<Leader>pp", ":Format<CR>", { silent = true })
 
 -- Apply codeAction to the selected region
@@ -101,7 +110,7 @@ keyset("v", "<C-f>", 'coc#float#has_scroll() ? coc#float#scroll(0.5) : "<C-f>"',
 keyset("v", "<C-u>", 'coc#float#has_scroll() ? coc#float#scroll(0) : "<C-b>"', opts)
 
 -- Add `:Format` command to format current buffer
-vim.api.nvim_create_user_command("Format", "call CocAction('format')", {})
+vim.api.nvim_create_user_command("CocFormat", "call CocAction('format')", {})
 
 -- " Add `:Fold` command to fold current buffer
 vim.api.nvim_create_user_command("Fold", "call CocAction('fold', <f-args>)", { nargs = '?' })

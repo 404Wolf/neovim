@@ -63,10 +63,7 @@ require("lazy").setup({
     'neoclide/coc.nvim',
     branch = 'release',
   },
-  {
-    'neovim/nvim-lspconfig',
-    branch = 'master',
-  },
+  'chentoast/marks.nvim',
 })
 
 -- Require other packages
