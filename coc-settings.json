@@ -5,6 +5,7 @@
       "rootPatterns": [ ".nixd.json" ],
       "filetypes": [ "nix" ]
     },
+    "python.formatting.provider": "none"
   }
 }
 

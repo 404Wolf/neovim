@@ -4,8 +4,10 @@ vim.g.coc_global_extensions = {
   'coc-tsserver',
   'coc-julia',
   'coc-texlab',
-  'coc-sumneko-lua'
+  'coc-sumneko-lua',
+  '@yaegassy/coc-black-formatter',
 }
+vim.cmd(":CocCommand black-formatter.installServer")
 
 -- Some servers have issues with backup files, see #649
 vim.opt.backup = false
