@@ -6,7 +6,8 @@
       "filetypes": [ "nix" ],
     },
     "nix.formatting.provider": "nixfmt",
-    "python.formatting.provider": "none"
+    "python.formatting.provider": "none",
+    "python.venvPath": "venv",
   }
 }
 
