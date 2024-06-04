@@ -1,3 +1,6 @@
+-- Remap to hide and show the tree
+vim.api.nvim_set_keymap('n', '<C-n>', ':Neotree toggle<CR>', { noremap = true, silent = true })
+
 vim.fn.sign_define("DiagnosticSignError", { text = " ", texthl = "DiagnosticSignError" })
 vim.fn.sign_define("DiagnosticSignWarn", { text = " ", texthl = "DiagnosticSignWarn" })
 vim.fn.sign_define("DiagnosticSignInfo", { text = " ", texthl = "DiagnosticSignInfo" })
@@ -75,8 +78,8 @@ require("neo-tree").setup({
   },
   commands = {},
   window = {
-    position = "right",
-    width = 35,
+    position = "left",
+    width = 28,
     mapping_options = {
       noremap = true,
       nowait = true,
@@ -102,7 +105,7 @@ require("neo-tree").setup({
       ["w"] = "open_with_window_picker",
       --["P"] = "toggle_preview", -- enter preview mode, which shows the current node without focusing
       ["C"] = "close_node",
-      -- ['C'] = 'close_all_subnodes',
+      ['K'] = 'close_all_subnodes',
       ["z"] = "close_all_nodes",
       --["Z"] = "expand_all_nodes",
       ["a"] = {

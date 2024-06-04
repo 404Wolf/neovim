@@ -1,5 +1,7 @@
 vim.g.coc_global_extensions = {
   'coc-json',
+  'coc-yaml',
+  'coc-docker',
   'coc-pyright',
   'coc-tsserver',
   'coc-julia',
@@ -63,11 +65,12 @@ keyset("n", "K", '<CMD>lua _G.show_docs()<CR>', { silent = true })
 keyset("n", "<leader>rn", "<Plug>(coc-rename)", { silent = true })
 
 function formatBasedOnLanguage()
+  vim.cmd.write()
   local fileLanguage = vim.bo.filetype
   local absolutePath = vim.fn.expand('%:p')
   if fileLanguage == "nix" then
     vim.fn.system("nixfmt " .. absolutePath)
-    vim.cmd("edit!")  -- Reload after formatting
+    vim.cmd("edit!") -- Reload after formatting
   else
     vim.cmd("CocFormat")
   end
@@ -76,7 +79,10 @@ end
 vim.api.nvim_create_user_command("Format", formatBasedOnLanguage, {})
 
 -- Formatting selected code
-keyset("n", "<Leader>pp", ":Format<CR>", { silent = true })
+keyset("n", "<Leader>pp", function()
+  formatBasedOnLanguage()
+  vim.cmd.write()
+end, { silent = true })
 
 -- Apply codeAction to the selected region
 -- Example: `<leader>aap` for current paragraph
@@ -109,7 +115,7 @@ keyset("i", "<C-u>", 'coc#float#has_scroll() ? "<c-r>=coc#float#scroll(0)<cr>" :
 keyset("v", "<C-f>", 'coc#float#has_scroll() ? coc#float#scroll(0.5) : "<C-f>"', opts)
 keyset("v", "<C-u>", 'coc#float#has_scroll() ? coc#float#scroll(0) : "<C-b>"', opts)
 
--- Add `:Format` command to format current buffer
+-- Add `:CocFormat` command to format current buffer
 vim.api.nvim_create_user_command("CocFormat", "call CocAction('format')", {})
 
 -- " Add `:Fold` command to fold current buffer

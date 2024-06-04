@@ -1,3 +1,5 @@
+require("setup")
+
 -- Install lazy (package manager)
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
@@ -63,7 +65,18 @@ require("lazy").setup({
     'neoclide/coc.nvim',
     branch = 'release',
   },
+  {
+    'stevearc/aerial.nvim',
+    opts = {},
+    -- Optional dependencies
+    dependencies = {
+      "nvim-treesitter/nvim-treesitter",
+      "nvim-tree/nvim-web-devicons"
+    },
+  },
+  'github/copilot.vim',
   'chentoast/marks.nvim',
+  'pocco81/auto-save.nvim'
 })
 
 -- Require other packages

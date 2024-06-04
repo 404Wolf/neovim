@@ -1,4 +1,13 @@
-vim.o.cmdheight=0
+vim.o.cmdheight = 0
+
+local function autosave_enable_status()
+  local autosave = require('auto-save')
+  if autosave.enabled then
+    return 'ON'
+  else
+    return 'OFF'
+  end
+end
 
 require('lualine').setup {
   options = {
@@ -12,7 +21,7 @@ require('lualine').setup {
     },
     ignore_focus = {},
     always_divide_middle = true,
-    globalstatus = false,
+    globalstatus = true,
     refresh = {
       statusline = 1000,
       tabline = 1000,
@@ -23,6 +32,7 @@ require('lualine').setup {
     lualine_a = { 'mode' },
     lualine_b = { 'branch', 'diff', 'diagnostics' },
     lualine_c = { 'filename' },
+    --
     lualine_x = { 'encoding', 'fileformat', 'filetype' },
     lualine_y = { 'progress' },
     lualine_z = { 'location' }
