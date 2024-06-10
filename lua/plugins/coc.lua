@@ -1,6 +1,7 @@
 vim.g.coc_global_extensions = {
   'coc-json',
   'coc-yaml',
+  'coc-java',
   'coc-docker',
   'coc-pyright',
   'coc-tsserver',

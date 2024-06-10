@@ -1,4 +1,4 @@
-vim.keymap.set("n", "<C-a>", "<cmd>AerialToggle!<CR>")
+vim.keymap.set("n", "<C-s>", "<cmd>AerialToggle!<CR>")
 
 require("aerial").setup({
   -- Priority list of preferred backends for aerial.

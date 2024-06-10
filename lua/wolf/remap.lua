@@ -10,12 +10,11 @@ map('n', '<C-m>', ':only<CR>', opts)
 -- Setup format
 map('n', '<Leader>p', ':Format<CR>', opts)
 
--- Completely quit neovim with control w (making sure to save changes)
-map({ 'n', 'v' }, '<C-c>', function()
-  vim.cmd('Neotree close')
-  vim.cmd('AerialClose')
-  vim.cmd('wqa')
-end, opts)
+-- Easy semicolon
+map('n', '<C-;>', ':.s/$/;/', opts)
+
+-- New terminal buffer and enter it
+map('n', '<C-t>', ':enew<CR>:term<CR>', opts)
 
 -- Save files and quit more easily
 map('n', '<Leader><Leader>', ':', { noremap = true, silent = false })
@@ -41,7 +40,7 @@ map('n', '<C-k>', '<C-w>k', opts)
 map('n', '<C-l>', '<C-w>l', opts)
 
 -- Resize splits more easily
-local resize_amount = 7
+local resize_amount = 8
 map('n', '<Leader>hh', ':vertical resize +' .. resize_amount .. '<CR>', opts)
 map('n', '<Leader>ll', ':vertical resize -' .. resize_amount .. '<CR>', opts)
 map('n', '<Leader>kk', ':resize -' .. resize_amount .. '<CR>', opts)
@@ -52,7 +51,9 @@ map('n', '<Leader>tt', ':term<CR>', opts)
 -- Create a terminal in a new pane
 map('n', '<Leader>tn', ':vsplit | term<CR>', opts)
 -- Exit terminal mode (qt)
-map('t', '<C-q>', '<C-\\><C-n>', opts)
+map('t', '<Esc>', '<C-\\><C-n>', opts)
+-- Control q in terminal mode is forced
+map('t', '<C-q>', '<C-\\><C-n>:q!<CR>', opts)
 
 -- Layouts
 vim.api.nvim_create_user_command('SplitTermLayout', TerminalOnBottomLayout, {})

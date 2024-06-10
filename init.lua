@@ -74,6 +74,11 @@ require("lazy").setup({
       "nvim-tree/nvim-web-devicons"
     },
   },
+  {
+    'windwp/nvim-autopairs',
+    event = "InsertEnter",
+    config = true
+  },
   'github/copilot.vim',
   'chentoast/marks.nvim',
   'pocco81/auto-save.nvim'

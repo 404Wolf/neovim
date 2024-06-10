@@ -1,3 +1,4 @@
+require('plugins.onedark')
 require('plugins.autosave')
 require('plugins.aerial')
 require('plugins.lualine')
