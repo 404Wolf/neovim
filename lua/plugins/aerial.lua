@@ -1,5 +1,3 @@
-vim.keymap.set("n", "<C-b>", "<cmd>AerialToggle!<CR>")
-
 require("aerial").setup({
   -- Priority list of preferred backends for aerial.
   -- This can be a filetype map (see :help aerial-filetype-map)
@@ -180,7 +178,7 @@ require("aerial").setup({
   -- Use symbol tree for folding. Set to true or false to enable/disable
   -- Set to "auto" to manage folds if your previous foldmethod was 'manual'
   -- This can be a filetype map (see :help aerial-filetype-map)
-  manage_folds = false,
+  manage_folds = true,
 
   -- When you fold code with za, zo, or zc, update the aerial tree as well.
   -- Only works when manage_folds = true

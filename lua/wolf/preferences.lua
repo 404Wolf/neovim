@@ -11,3 +11,15 @@ vim.o.expandtab = true
 vim.o.relativenumber = true
 vim.o.number = true
 
+-- Rular at 90 characters
+vim.o.colorcolumn = "79,120"
+
+-- Use dots for spaces
+vim.opt.list = true
+vim.opt.listchars:append("space:·")
+
+---- Custom highlighting
+vim.cmd('highlight Visual guibg=#0d2927')
+
+-- Enable the LSP
+vim.cmd('LspStart')

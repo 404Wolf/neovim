@@ -1,5 +1,3 @@
-vim.api.nvim_set_keymap("n", "<Leader>as", ":ASToggle<CR>", {})
-
 AutoSaveEnabled = false
 
 require('auto-save').setup({

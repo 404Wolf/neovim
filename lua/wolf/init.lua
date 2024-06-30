@@ -1,4 +1,4 @@
 require("wolf.layouts")
-require("wolf.remap")
+require("wolf.keybinds")
 require("wolf.preferences")
 require("plugins")
