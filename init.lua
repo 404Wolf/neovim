@@ -1,6 +1,6 @@
 require("setup")
 
--- Define XDG_DATA_HOME with a fallback                                                                                                                                                                              
+--C
 local xdg_data_home = vim.env.XDG_DATA_HOME or (vim.env.HOME .. "/.local/share")                                                                                                                                     
                                                                                                                                                                                                                      
 -- Path to lazy.nvim in the XDG data directory                                                                                                                                                                       
