@@ -50,6 +50,7 @@
                     pkgs.ripgrep
                     pkgs.fd
                     pkgs.rustfmt
+                    pkgs.taplo
                     pkgs.pandoc
                     pkgs.tree-sitter
                   ]

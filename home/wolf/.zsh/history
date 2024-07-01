@@ -75,3 +75,8 @@
 : 1719815109:0;nvim .
 : 1719815134:0;git add .
 : 1719815136:0;git add --a
+: 1719815140:0;git commit -m "Add flake"
+: 1719815143:0;git push
+: 1719815590:0;cd neovim
+: 1719815591:0;nvim .
+: 1719815684:0;git add --a
