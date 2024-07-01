@@ -3,6 +3,7 @@ require("conform").setup({
 		lua = { "stylua" },
 		python = { "black", "isort" },
 		javascript = { { "prettierd", "prettier" } },
+		typescript = { { "prettierd", "prettier" } },
 		nix = { "nixfmt" },
 		go = { "goimports", "gofmt" },
 		bash = { "beautysh" },

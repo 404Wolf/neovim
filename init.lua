@@ -1,6 +1,5 @@
 require("setup")
 
---C
 local xdg_data_home = vim.env.XDG_DATA_HOME or (vim.env.HOME .. "/.local/share")
 
 -- Path to lazy.nvim in the XDG data directory
@@ -122,6 +121,7 @@ require("lazy").setup({
 		config = function() end,
 	},
 	"ThePrimeagen/harpoon",
+	"ms-jpq/coq.thirdparty",
 })
 
 -- Require other packages
