@@ -1,24 +1,30 @@
+local utils = require("wolf.keybinds.utils")
+local opts = { noremap = true, silent = true }
 opts = { noremap = true, silent = true }
 
 -- Aerieal
-vim.api.nvim_set_keymap("n", "<C-m>", "<cmd>AerialToggle!<CR>", {})
+utils.map("n", "<C-m>", "<cmd>AerialToggle!<CR>", {})
 
 -- Autosave
-vim.api.nvim_set_keymap("n", "<Leader>as", ":ASToggle<CR>", {})
+utils.map("n", "<Leader>as", ":ASToggle<CR>", {})
 
 -- Comments
-vim.api.nvim_set_keymap('n', '<C-/>', 'gc', opts)
+utils.map('n', '<C-/>', 'gc', opts)
 
 -- Docstrings
-vim.api.nvim_set_keymap('n', '<C-j>', ':DogeGenerate<CR>', opts)
+utils.map('n', '<C-j>', ':DogeGenerate<CR>', opts)
 
 -- Neotree
-vim.api.nvim_set_keymap('n', '<C-n>', ':Neotree toggle<CR>', opts)
+utils.map('n', '<C-n>', ':Neotree toggle<CR>', opts)
 
 -- Hop
-vim.api.nvim_set_keymap('n', '<Leader>hw', ':HopWord<CR>', opts)
-vim.api.nvim_set_keymap('n', '<Leader>hc', ':HopCamelCase<CR>' , opts)
-vim.api.nvim_set_keymap('n', '<Leader>hl', ':HopLine<CR>', opts)
+utils.map('n', '<Leader>hw', ':HopWord<CR>', opts)
+utils.map('n', '<Leader>hc', ':HopCamelCase<CR>' , opts)
+utils.map('n', '<Leader>hl', ':HopLine<CR>', opts)
 
--- Harpoon
--- "<CMD>lua require("harpoon.mark").add_file()"
+-- LSP
+utils.map('n', 'grn', 'lua vim.lsp.buf.rename()', opts)
+utils.map('n', 'gra', 'lua vim.lsp.buf.code_action()', opts)
+utils.map('n', 'grr', 'lua vim.lsp.buf.references()', opts)
+utils.map('i', '<C-S>', 'lua vim.lsp.buf.signature_help()', opts)
+
