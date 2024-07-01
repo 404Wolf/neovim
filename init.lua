@@ -120,7 +120,11 @@ require("lazy").setup({
 		end,
 		config = function() end,
 	},
-	"ThePrimeagen/harpoon",
+  {
+		"ThePrimeagen/harpoon",
+		branch = "harpoon2",
+		dependencies = { "nvim-lua/plenary.nvim" },
+	},
 	"ms-jpq/coq.thirdparty",
 })
 

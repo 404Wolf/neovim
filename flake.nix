@@ -58,6 +58,8 @@
                     pkgs.taplo
                     pkgs.pandoc
                     pkgs.tree-sitter
+                    pkgs.wl-clipboard
+                    pkgs.xclip
                   ]
                 }
             '';
