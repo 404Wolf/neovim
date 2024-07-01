@@ -1,18 +1,18 @@
 require("setup")
 
 --C
-local xdg_data_home = vim.env.XDG_DATA_HOME or (vim.env.HOME .. "/.local/share")                                                                                                                                     
-                                                                                                                                                                                                                     
--- Path to lazy.nvim in the XDG data directory                                                                                                                                                                       
-local lazypath = xdg_data_home .. "/lazy/lazy.nvim"                                                                                                                                                                  
-                                                                                                                                                                                                                     
--- Clone lazy.nvim if it doesn't exist                                                                                                                                                                               
-if (vim.uv or vim.loop).fs_stat(lazypath) == nil then                                                                                                                                                                
-  local lazyrepo = "https://github.com/folke/lazy.nvim.git"                                                                                                                                                          
-  vim.fn.system({ "git", "clone", "--filter=blob:none", "--branch=stable", lazyrepo, lazypath })                                                                                                                     
-end                                                                                                                                                                                                                  
-                                                                                                                                                                                                                     
--- Prepend the path to 'runtimepath'                                                                                                                                                                                 
+local xdg_data_home = vim.env.XDG_DATA_HOME or (vim.env.HOME .. "/.local/share")
+
+-- Path to lazy.nvim in the XDG data directory
+local lazypath = xdg_data_home .. "/lazy/lazy.nvim"
+
+-- Clone lazy.nvim if it doesn't exist
+if (vim.uv or vim.loop).fs_stat(lazypath) == nil then
+	local lazyrepo = "https://github.com/folke/lazy.nvim.git"
+	vim.fn.system({ "git", "clone", "--filter=blob:none", "--branch=stable", lazyrepo, lazypath })
+end
+
+-- Prepend the path to 'runtimepath'
 vim.opt.rtp:prepend(lazypath)
 
 -- Do plugin installations
