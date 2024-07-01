@@ -23,8 +23,10 @@
             postFixup = ''
               ${previousAttrs.postFixup or ""}
               wrapProgram $out/bin/nvim \
-                --set PATH $PATH:${
+                --set PATH ${
                   pkgs.lib.makeBinPath [
+                    pkgs.bash
+                    pkgs.coreutils-full
                     pkgs.nodejs_22
                     pkgs.git
                     pkgs.nixd
