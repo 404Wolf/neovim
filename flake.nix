@@ -23,8 +23,9 @@
             postFixup = ''
               ${previousAttrs.postFixup or ""}
               wrapProgram $out/bin/nvim \
-                --set PATH ${
+                --set PATH $PATH:${
                   pkgs.lib.makeBinPath [
+                    pkgs.gcc
                     pkgs.bash
                     pkgs.coreutils-full
                     pkgs.nodejs_22
@@ -45,6 +46,8 @@
                     pkgs.yaml-language-server
                     pkgs.vscode-langservers-extracted
                     pkgs.gosimports
+                    pkgs.typescript
+                    pkgs.nodePackages_latest.typescript-language-server
                     pkgs.beautysh
                     pkgs.rustc
                     pkgs.cargo
