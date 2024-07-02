@@ -1,4 +1,3 @@
-require('plugins.harpoon')
 require('plugins.conform')
 require('plugins.hop')
 require('plugins.coq')
