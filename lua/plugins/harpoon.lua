@@ -25,11 +25,11 @@ vim.keymap.set("n", "<leader>ha", function()
 	harpoon:list():add()
 end)
 
-vim.keymap.set("n", "<leader>fr", function()
+vim.keymap.set("n", "<leader>hr", function()
 	harpoon:list():remove()
 end)
 
-vim.keymap.set("n", "<leader>hr", function() toggle_telescope(harpoon:list()) end,
+vim.keymap.set("n", "<leader>fr", function() toggle_telescope(harpoon:list()) end,
     { desc = "Open harpoon window" })
 
 for i = 1, 9 do
