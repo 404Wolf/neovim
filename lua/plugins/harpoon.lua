@@ -29,7 +29,7 @@ vim.keymap.set("n", "<leader>hr", function()
 	harpoon:list():remove()
 end)
 
-vim.keymap.set("n", "<leader>hf", function() toggle_telescope(harpoon:list()) end,
+vim.keymap.set("n", "<leader>hr", function() toggle_telescope(harpoon:list()) end,
     { desc = "Open harpoon window" })
 
 for i = 1, 9 do
