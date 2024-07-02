@@ -25,7 +25,7 @@ vim.keymap.set("n", "<leader>ha", function()
 	harpoon:list():add()
 end)
 
-vim.keymap.set("n", "<leader>hr", function()
+vim.keymap.set("n", "<leader>fr", function()
 	harpoon:list():remove()
 end)
 
