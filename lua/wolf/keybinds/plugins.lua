@@ -26,7 +26,7 @@ utils.map("n", "<Leader>hl", ":HopLine<CR>", opts)
 utils.map("n", "grn", ":lua vim.lsp.buf.rename()<CR>", opts)
 utils.map("n", "gra", ":lua vim.lsp.buf.code_action()<CR>", opts)
 utils.map("n", "grr", ":lua vim.lsp.buf.references()<CR>", opts)
-utils.map("i", "<C-S>", ":lua vim.lsp.buf.signature_help()<CR>", opts)
+utils.map("n", "grs", ":lua vim.lsp.buf.signature_help()<CR>", opts)
 
 -- Barbar
 
