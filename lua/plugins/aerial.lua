@@ -27,7 +27,7 @@ require("aerial").setup({
     placement = "edge",
 
     -- When the symbols change, resize the aerial window (within min/max constraints) to fit
-    resize_to_content = true,
+    resize_to_content = false,
 
     -- Preserve window size equality with (:help CTRL-W_=)
     preserve_equality = false,
@@ -86,7 +86,7 @@ require("aerial").setup({
 
   -- When true, don't load aerial until a command or function is called
   -- Defaults to true, unless `on_attach` is provided, then it defaults to false
-  lazy_load = true,
+  lazy_load = false,
 
   -- Disable aerial on files with this many lines
   disable_max_lines = 10000,
@@ -130,7 +130,7 @@ require("aerial").setup({
   highlight_on_jump = 300,
 
   -- Jump to symbol in source window when the cursor moves
-  autojump = false,
+  autojump = true,
 
   -- Define symbol icons. You can also specify "<Symbol>Collapsed" to change the
   -- icon when the tree is collapsed at that symbol, or "Collapsed" to specify a
@@ -200,7 +200,7 @@ require("aerial").setup({
 
   -- Automatically open aerial when entering supported buffers.
   -- This can be a function (see :help aerial-open-automatic)
-  open_automatic = false,
+  open_automatic = true,
 
   -- Run this command after jumping to a symbol (false will disable)
   post_jump_cmd = "normal! zz",
