@@ -1,3 +1,4 @@
+require("plugins.nvimdev")
 require('plugins.conform')
 require('plugins.coq')
 require('plugins.gitsigns')

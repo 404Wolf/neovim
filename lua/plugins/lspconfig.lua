@@ -1,10 +1,10 @@
 local lspconfig = require("lspconfig")
+local coq = require("coq")
 
 lspconfig.basedpyright.setup({
 	autostart = true,
-	on_attach = on_attach,
-	capabilities = capabilities,
 })
+lspconfig.basedpyright.setup(coq.lsp_ensure_capabilities())
 
 lspconfig.lua_ls.setup({
 	autostart = true,
@@ -30,22 +30,27 @@ lspconfig.lua_ls.setup({
 		Lua = {},
 	},
 })
+lspconfig.lua_ls.setup(coq.lsp_ensure_capabilities())
 
 lspconfig.rust_analyzer.setup({
 	autostart = true,
 })
+lspconfig.rust_analyzer.setup(coq.lsp_ensure_capabilities())
 
 lspconfig.nixd.setup({
 	autostart = true,
 })
+lspconfig.nixd.setup(coq.lsp_ensure_capabilities())
 
 lspconfig.bashls.setup({
 	autostart = true,
 })
+lspconfig.bashls.setup(coq.lsp_ensure_capabilities())
 
 lspconfig.jsonls.setup({
 	autostart = true,
 })
+lspconfig.jsonls.setup(coq.lsp_ensure_capabilities())
 
 lspconfig.yamlls.setup({
 	autostart = true,
@@ -57,10 +62,13 @@ lspconfig.yamlls.setup({
 		},
 	},
 })
+lspconfig.yamlls.setup(coq.lsp_ensure_capabilities())
+lspconfig.yamlls.setup(coq.lsp_ensure_capabilities())
 
 lspconfig.ltex.setup({
 	autostart = true,
 })
+lspconfig.ltex.setup(coq.lsp_ensure_capabilities())
 
 -- VSCode provided language servers
 
@@ -71,13 +79,15 @@ lspconfig.html.setup({
 	autostart = true,
 	capabilities = capabilities,
 })
+lspconfig.html.setup(coq.lsp_ensure_capabilities())
 
 lspconfig.jsonls.setup({
 	autostart = true,
 	capabilities = capabilities,
 })
+lspconfig.jsonls.setup(coq.lsp_ensure_capabilities())
 
 lspconfig.taplo.setup({
 	autostart = true,
 })
-
+lspconfig.taplo.setup(coq.lsp_ensure_capabilities())

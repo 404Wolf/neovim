@@ -23,12 +23,15 @@ utils.map("n", "<Leader>hc", ":HopCamelCase<CR>", opts)
 utils.map("n", "<Leader>hl", ":HopLine<CR>", opts)
 
 -- LSP
-utils.map("n", "grn", ":lua vim.lsp.buf.rename()<CR>", opts)
-utils.map("n", "gra", ":lua vim.lsp.buf.code_action()<CR>", opts)
+utils.map("n", "gd", ":lua vim.lsp.buf.definition()<CR>", opts)
+utils.map("n", "gpd", ":Lspsaga peek_definition<CR>", opts)
+utils.map("n", "gld", ":Lspsaga show_line_diagnostics<CR>", opts)
+utils.map("n", "gff", "::Lspsaga finder<CR>", opts)
+utils.map("n", "grn", ":Lspsaga rename <CR>", opts)
+utils.map("n", "gra", ":Lspsaga code_action<CR>", opts)
 utils.map("n", "grr", ":lua vim.lsp.buf.references()<CR>", opts)
 utils.map("n", "grs", ":lua vim.lsp.buf.signature_help()<CR>", opts)
-
--- Barbar
+utils.map("i", "<C-Space>", "coq#complete()", { noremap = true, silent = true, expr = true })
 
 -- Move to previous/next
 utils.map('n', '<A-,>', '<Cmd>BufferPrevious<CR>', opts)
