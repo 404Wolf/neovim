@@ -17,10 +17,6 @@ vim.opt.rtp:prepend(lazypath)
 -- Do plugin installations
 require("lazy").setup({
 	{
-		"calind/selenized.nvim",
-		priority = 1000,
-	},
-	{
 		"olimorris/onedarkpro.nvim",
 		priority = 1000, -- Ensure it loads first
 	},
@@ -100,7 +96,6 @@ require("lazy").setup({
 	"pocco81/auto-save.nvim",
 	"numToStr/Comment.nvim",
 	"xiyaowong/virtcolumn.nvim",
-	"tpope/vim-fugitive",
 	"stevearc/conform.nvim",
 	{
 		"neovim/nvim-lspconfig", -- REQUIRED: for native Neovim LSP integration
@@ -132,7 +127,6 @@ require("lazy").setup({
 		},
 	},
 	{
-		"pmizio/typescript-tools.nvim",
 		dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
 		opts = {},
 	},

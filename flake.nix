@@ -32,7 +32,6 @@
                     pkgs.git
                     pkgs.nixd
                     pkgs.nodePackages.prettier
-                    pkgs.nodePackages_latest.typescript-language-server
                     pkgs.luajitPackages.lua-lsp
                     pkgs.lua-language-server
                     pkgs.basedpyright
@@ -47,7 +46,6 @@
                     pkgs.vscode-langservers-extracted
                     pkgs.gosimports
                     pkgs.typescript
-                    pkgs.nodePackages_latest.typescript-language-server
                     pkgs.beautysh
                     pkgs.rustc
                     pkgs.cargo
