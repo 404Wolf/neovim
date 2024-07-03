@@ -27,6 +27,7 @@
                 --run 'export PATH=$PATH:${
                   pkgs.lib.makeBinPath [
                     pkgs.gcc
+                    pkgs.ltex-ls
                     pkgs.bash
                     pkgs.coreutils-full
                     pkgs.nodejs_22
