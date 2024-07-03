@@ -1,10 +1,10 @@
 local lspconfig = require("lspconfig")
 local coq = require("coq")
 
-lspconfig.basedpyright.setup({
+lspconfig.pyright.setup({
 	autostart = true,
 })
-lspconfig.basedpyright.setup(coq.lsp_ensure_capabilities())
+lspconfig.pyright.setup(coq.lsp_ensure_capabilities())
 
 lspconfig.lua_ls.setup({
 	autostart = true,

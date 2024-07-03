@@ -34,7 +34,7 @@
                     pkgs.nodePackages.prettier
                     pkgs.luajitPackages.lua-lsp
                     pkgs.lua-language-server
-                    pkgs.basedpyright
+                    pkgs.pyright
                     pkgs.stylua
                     pkgs.prettierd
                     pkgs.nixfmt-rfc-style
