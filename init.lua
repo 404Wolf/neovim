@@ -56,6 +56,7 @@ require("lazy").setup({
 			"nvim-tree/nvim-web-devicons",
 		},
 	},
+	"lukas-reineke/indent-blankline.nvim",
 	{
 		"windwp/nvim-autopairs",
 		event = "InsertEnter",
