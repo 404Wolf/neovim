@@ -1,5 +1,4 @@
 require('plugins.conform')
-require('plugins.hop')
 require('plugins.coq')
 require('plugins.gitsigns')
 require('plugins.lspconfig')
