@@ -11,9 +11,6 @@ utils.map("n", "<Leader>as", ":ASToggle<CR>", {})
 -- Comments
 utils.map("n", "<C-/>", "gc", opts)
 
--- Docstrings
-utils.map("n", "<C-j>", ":DogeGenerate<CR>", opts)
-
 -- Neotree
 utils.map("n", "<C-n>", ":Neotree toggle<CR>", opts)
 
