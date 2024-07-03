@@ -81,7 +81,3 @@ lspconfig.taplo.setup({
 	autostart = true,
 })
 
-lspconfig.tsserver.setup({
-  autostart = true,
-})
-

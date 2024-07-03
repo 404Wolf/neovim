@@ -1,5 +1,3 @@
-require("setup")
-
 local xdg_data_home = vim.env.XDG_DATA_HOME or (vim.env.HOME .. "/.local/share")
 
 -- Path to lazy.nvim in the XDG data directory
@@ -125,6 +123,11 @@ require("lazy").setup({
 			},
 			version = "^1.0.0", -- optional: only update when a new 1.x version is released
 		},
+	},
+	{
+		"pmizio/typescript-tools.nvim",
+		dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
+		opts = {},
 	},
 })
 
