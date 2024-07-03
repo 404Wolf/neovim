@@ -23,7 +23,8 @@
             postFixup = ''
               ${previousAttrs.postFixup or ""}
               wrapProgram $out/bin/nvim \
-                --set PATH $PATH:${
+                --argv0 neovim \
+                --run 'export PATH=$PATH:${
                   pkgs.lib.makeBinPath [
                     pkgs.gcc
                     pkgs.bash
@@ -35,6 +36,7 @@
                     pkgs.luajitPackages.lua-lsp
                     pkgs.lua-language-server
                     pkgs.pyright
+                    pkgs.luarocks-nix
                     pkgs.stylua
                     pkgs.prettierd
                     pkgs.nixfmt-rfc-style
@@ -59,7 +61,7 @@
                     pkgs.wl-clipboard
                     pkgs.xclip
                   ]
-                }
+                }'
             '';
           }
         );
