@@ -102,9 +102,6 @@ require("lazy").setup({
 		init = function()
 			vim.g.coq_settings = {
 				auto_start = "shut-up", -- if you want to start COQ at startup
-				keymap = {
-					jump_to_mark = "",
-				},
 			}
 		end,
 		config = function() end,
