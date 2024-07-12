@@ -5,6 +5,7 @@ require("conform").setup({
 		javascript = { { "prettierd", "prettier" } },
 		typescript = { { "prettierd", "prettier" } },
 		json = { "prettier" },
+		yaml = { "prettier" },
 		nix = { "nixfmt" },
 		go = { "goimports", "gofmt" },
 		bash = { "beautysh" },
