@@ -8,6 +8,8 @@ require('nvim-treesitter.configs').setup {
     "query",
     "java",
     "javascript",
+    "typescript",
+    "tsx",
     "json",
     "jq",
     "python",
