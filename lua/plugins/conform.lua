@@ -2,8 +2,10 @@ require("conform").setup({
 	formatters_by_ft = {
 		lua = { "stylua" },
 		python = { "black", "isort" },
-		javascript = { { "prettierd", "prettier" } },
-		typescript = { { "prettierd", "prettier" } },
+		javascript = { { "prettierd" } },
+		typescript = { "prettierd" },
+		tsx = { "prettierd" },
+		css = { "prettier" },
 		json = { "prettier" },
 		yaml = { "prettier" },
 		nix = { "nixfmt" },
