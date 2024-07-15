@@ -147,6 +147,7 @@ require("lazy").setup({
 			require("lsp-file-operations").setup()
 		end,
 	},
+	"maxmellon/vim-jsx-pretty",
 })
 
 -- Require other packages
