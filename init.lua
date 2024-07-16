@@ -148,6 +148,11 @@ require("lazy").setup({
 		end,
 	},
 	"maxmellon/vim-jsx-pretty",
+	{
+		"luckasRanarison/tailwind-tools.nvim",
+		dependencies = { "nvim-treesitter/nvim-treesitter" },
+		opts = {}, -- your configuration
+	},
 })
 
 -- Require other packages
