@@ -7,10 +7,6 @@ vim.lsp.buf.format({
 require("conform").setup({
   formatters_by_ft = {
     lua = { "stylua" },
-    python = { "black", "isort" },
-    javascript = { { "prettierd" } },
-    typescript = { "prettierd" },
-    jsx = { "prettierd" },
     css = { "prettierd" },
     json = { "prettierd" },
     yaml = { "prettierd" },
