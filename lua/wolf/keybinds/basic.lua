@@ -27,7 +27,7 @@ utils.map("n", "<C-m>", ":only<CR>", opts)
 
 -- Setup format
 -- utils.map("n", "<Leader>pp", ':lua require("conform").format()<CR>:lua vim.lsp.buf.format()<CR>', opts)
-utils.map("n", "<Leader>pp", ':lua require("conform").format()', opts)
+utils.map("n", "<Leader>pp", ':Format <CR>', opts)
 
 -- Easy semicolon
 utils.map("n", "<C-;>", ":.s/$/;/<CR>", opts)
@@ -77,3 +77,4 @@ utils.map("t", "<C-q>", "<C-\\><C-n>:q!<CR>", opts)
 -- Layouts
 vim.api.nvim_create_user_command("SplitTermLayout", TerminalOnBottomLayout, {})
 utils.map("n", "<Leader>tl", ":SplitTermLayout<CR>", opts)
+
