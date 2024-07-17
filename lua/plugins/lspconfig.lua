@@ -80,6 +80,8 @@ lspconfig.ltex.setup({
 })
 lspconfig.ltex.setup(coq.lsp_ensure_capabilities())
 
+lspconfig.texlab.setup({ autostart = true })
+
 -- VSCode provided language servers
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
