@@ -26,7 +26,8 @@ utils.map("n", "zo", ":lua vim.wo.foldlevel = vim.wo.foldlevel + 1<CR>", opts)
 utils.map("n", "<C-m>", ":only<CR>", opts)
 
 -- Setup format
-utils.map("n", "<Leader>pp", ':lua require("conform").format()<CR>:lua vim.lsp.buf.format()<CR>`', opts)
+-- utils.map("n", "<Leader>pp", ':lua require("conform").format()<CR>:lua vim.lsp.buf.format()<CR>', opts)
+utils.map("n", "<Leader>pp", ':lua require("conform").format()', opts)
 
 -- Easy semicolon
 utils.map("n", "<C-;>", ":.s/$/;/<CR>", opts)

@@ -1,7 +1,7 @@
 vim.g.coq_settings = {
 	auto_start = "shut-up", -- if you want to start COQ at startup
 	keymap = {
-		jump_to_mark = "asdfghjkl",
+		jump_to_mark = "",
 	},
 	xdg = true,
 	clients = {
