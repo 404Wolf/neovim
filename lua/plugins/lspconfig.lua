@@ -47,19 +47,11 @@ lspconfig.rust_analyzer.setup({
 })
 lspconfig.rust_analyzer.setup(coq.lsp_ensure_capabilities())
 
-lspconfig.nixd.setup({
-	autostart = true,
-})
-lspconfig.nixd.setup(coq.lsp_ensure_capabilities())
+lspconfig.nixd.setup({ autostart = true })
+lspconfig.nil_ls.setup(coq.lsp_ensure_capabilities())
 
-lspconfig.bashls.setup({
-	autostart = true,
-})
 lspconfig.bashls.setup(coq.lsp_ensure_capabilities())
 
-lspconfig.jsonls.setup({
-	autostart = true,
-})
 lspconfig.jsonls.setup(coq.lsp_ensure_capabilities())
 
 lspconfig.yamlls.setup({
@@ -71,9 +63,8 @@ lspconfig.yamlls.setup({
 			},
 		},
 	},
+	coq.lsp_ensure_capabilities(),
 })
-lspconfig.yamlls.setup(coq.lsp_ensure_capabilities())
-lspconfig.yamlls.setup(coq.lsp_ensure_capabilities())
 
 lspconfig.ltex.setup({
 	autostart = true,
@@ -96,10 +87,11 @@ lspconfig.html.setup(coq.lsp_ensure_capabilities())
 lspconfig.jsonls.setup({
 	autostart = true,
 	capabilities = capabilities,
+	coq.lsp_ensure_capabilities(),
 })
-lspconfig.jsonls.setup(coq.lsp_ensure_capabilities())
 
 lspconfig.taplo.setup({
 	autostart = true,
+	capabilities = capabilities,
+	coq.lsp_ensure_capabilities(),
 })
-lspconfig.taplo.setup(coq.lsp_ensure_capabilities())

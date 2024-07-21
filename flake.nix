@@ -7,7 +7,7 @@
   };
 
   outputs =
-    {
+   {
       self,
       nixpkgs,
       flake-utils,
@@ -16,6 +16,7 @@
       system:
       let
         pkgs = import nixpkgs { inherit system; };
+        lsps = pkgs.callPackage ./lsps.nix { inherit pkgs; };
       in
       {
         packages.default = pkgs.neovim.overrideAttrs (
@@ -25,43 +26,15 @@
               wrapProgram $out/bin/nvim \
                 --argv0 neovim \
                 --run 'export PATH=$PATH:${
-                  pkgs.lib.makeBinPath [
-                    pkgs.gcc
-                    pkgs.ltex-ls
-                    pkgs.bash
-                    pkgs.coreutils-full
-                    pkgs.nodejs_22
-                    pkgs.git
-                    pkgs.nixd
-                    pkgs.nodePackages.prettier
-                    pkgs.luajitPackages.lua-lsp
-                    pkgs.lua-language-server
-                    pkgs.pyright
-                    pkgs.luarocks-nix
-                    pkgs.stylua
-                    pkgs.prettierd
-                    pkgs.nixfmt-rfc-style
-                    pkgs.black # Python formatter
-                    pkgs.isort # Python import sorter
-                    pkgs.go_1_21 # Go formatter
-                    pkgs.nodePackages_latest.bash-language-server
-                    pkgs.yaml-language-server
-                    pkgs.vscode-langservers-extracted
-                    pkgs.gosimports
-                    pkgs.typescript
-                    pkgs.beautysh
-                    pkgs.rustc
-                    pkgs.cargo
-                    pkgs.rust-analyzer
-                    pkgs.ripgrep
-                    pkgs.fd
-                    pkgs.rustfmt
-                    pkgs.taplo
-                    pkgs.pandoc
-                    pkgs.tree-sitter
-                    pkgs.texlab
-                    pkgs.wl-clipboard
-                  ]
+                  pkgs.lib.makeBinPath (
+                    lsps
+                    ++ [
+                      pkgs.gcc
+                      pkgs.wl-clipboard
+                      pkgs.bash
+                      pkgs.nodejs_22
+                    ]
+                  )
                 }'
             '';
           }

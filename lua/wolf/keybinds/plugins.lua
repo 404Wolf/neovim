@@ -11,13 +11,8 @@ utils.map("n", "<Leader>as", ":ASToggle<CR>", {})
 -- Comments
 utils.map("n", "<C-/>", "gc", opts)
 
--- Neotree
-utils.map("n", "<C-n>", ":Neotree toggle<CR>", opts)
-
--- Hop
-utils.map("n", "<Leader>hw", ":HopWord<CR>", opts)
-utils.map("n", "<Leader>hc", ":HopCamelCase<CR>", opts)
-utils.map("n", "<Leader>hl", ":HopLine<CR>", opts)
+-- Chadtree
+utils.map("n", "<C-n>", ":CHADopen<CR>", opts)
 
 -- LSP
 utils.map("n", "gd", ":lua vim.lsp.buf.definition()<CR>", opts)

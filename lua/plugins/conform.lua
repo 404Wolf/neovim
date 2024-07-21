@@ -15,6 +15,7 @@ require("conform").setup({
 		bash = { "beautysh" },
 		sh = { "beautysh" },
 		rust = { "rustfmt" },
+		tex = { "latexindent" },
 	},
 })
 

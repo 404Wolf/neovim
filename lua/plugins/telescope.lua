@@ -6,7 +6,6 @@ vim.keymap.set('n', '<Leader>fb', builtin.buffers, {})
 vim.keymap.set('n', '<Leader>fh', builtin.help_tags, {})
 vim.keymap.set('n', '<Leader>fs', function() vim.cmd("Telescope aerial") end, {})
 
-require("telescope").load_extension("aerial")
 require("telescope").setup({
   extensions = {
     aerial = {
@@ -19,3 +18,4 @@ require("telescope").setup({
     },
   },
 })
+require("telescope").load_extension("aerial")

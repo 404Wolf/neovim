@@ -23,22 +23,8 @@ require("lazy").setup({
 		dependencies = { "nvim-tree/nvim-web-devicons" },
 	},
 	{
-		"nvim-telescope/telescope.nvim",
-		tag = "0.1.6",
-		dependencies = { "nvim-lua/plenary.nvim" },
-	},
-	{
 		"nvim-treesitter/nvim-treesitter",
 		build = ":TSUpdate",
-	},
-	{
-		"nvim-neo-tree/neo-tree.nvim",
-		branch = "v3.x",
-		dependencies = {
-			"nvim-lua/plenary.nvim",
-			"nvim-tree/nvim-web-devicons",
-			"MunifTanjim/nui.nvim",
-		},
 	},
 	{
 		"goolord/alpha-nvim",
@@ -56,6 +42,12 @@ require("lazy").setup({
 			"nvim-tree/nvim-web-devicons",
 		},
 	},
+	{
+		"nvim-telescope/telescope.nvim",
+		tag = "0.1.6",
+		cmd = "Telescope",
+		dependencies = { "nvim-lua/plenary.nvim" },
+	},
 	"lukas-reineke/indent-blankline.nvim",
 	{
 		"windwp/nvim-autopairs",
@@ -72,25 +64,73 @@ require("lazy").setup({
 					"https://github.com/kkoomen/vim-doge",
 					"~/.local/share/nvim/lazy/vim-doge",
 				})
-
 				vim.cmd("call doge#install()")
 			end
 		end,
 	},
-	{
-		"smoka7/hop.nvim",
-		version = "*",
-		opts = {
-			keys = "etovxqpdygfblzhckisuran",
-		},
-	},
 	"lewis6991/gitsigns.nvim",
-	"github/copilot.vim",
 	"chentoast/marks.nvim",
 	"pocco81/auto-save.nvim",
 	"numToStr/Comment.nvim",
 	"xiyaowong/virtcolumn.nvim",
-	"stevearc/conform.nvim",
+	{
+		"jonahgoldwastaken/copilot-status.nvim",
+		dependencies = { "zbirenbaum/copilot.lua" },
+		lazy = true,
+		event = "BufReadPost",
+	},
+	{
+		"zbirenbaum/copilot.lua",
+		cmd = "Copilot",
+		event = "InsertEnter",
+		config = function()
+			require("copilot").setup({})
+		end,
+	},
+	"onsails/lspkind.nvim",
+	{
+		"stevearc/conform.nvim",
+		event = { "BufWritePre" },
+		cmd = { "ConformInfo" },
+		keys = {
+			{
+				-- Customize or remove this keymap to your liking
+				"<leader>f",
+				function()
+					require("conform").format({ async = true })
+				end,
+				mode = "",
+				desc = "Format buffer",
+			},
+		},
+		-- This will provide type hinting with LuaLS
+		---@module "conform"
+		---@type conform.setupOpts
+		opts = {
+			-- Define your formatters
+			formatters_by_ft = {
+				lua = { "stylua" },
+				python = { "isort", "black" },
+				javascript = { "prettierd", "prettier", stop_after_first = true },
+			},
+			-- Set default options
+			default_format_opts = {
+				lsp_format = "fallback",
+			},
+			-- Set up format-on-save
+			format_on_save = { timeout_ms = 500 },
+			-- Customize formatters
+			formatters = {
+				shfmt = {
+					prepend_args = { "-i", "2" },
+				},
+			},
+		},
+		init = function()
+			-- If you want the formatexpr, here is the place to set it
+			vim.o.formatexpr = "v:lua.require'conform'.formatexpr()"
+		end,
+	},
 	{
 		"neovim/nvim-lspconfig", -- REQUIRED: for native Neovim LSP integration
 		lazy = false, -- REQUIRED: tell lazy.nvim to start this plugin at startup
@@ -145,17 +185,28 @@ require("lazy").setup({
 		"luckasRanarison/tailwind-tools.nvim",
 		dependencies = { "nvim-treesitter/nvim-treesitter" },
 		opts = {}, -- your configuration
-    t = {'typescript', 'typescriptreact', 'javascript'}
+		t = { "typescript", "typescriptreact", "javascript" },
 	},
 	"maxmellon/vim-jsx-pretty",
 	{
 		"pmizio/typescript-tools.nvim",
 		dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
 		opts = {},
-    t = {'typescript', 'typescriptreact', 'javascript'}
+		t = { "typescript", "typescriptreact", "javascript" },
 	},
+	{
+		"ms-jpq/chadtree",
+		build = ":CHADdeps",
+		dependencies = {
+			"nvim-tree/nvim-web-devicons",
+			"MunifTanjim/nui.nvim",
+			"nvim-lua/plenary.nvim",
+		},
+	},
+	"tpope/vim-fugitive",
 })
 
 -- Require other packages
 require("wolf")
 vim.cmd(":AerialOpen")
+

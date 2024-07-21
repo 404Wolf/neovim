@@ -22,4 +22,4 @@ vim.opt.listchars:append("space:·")
 vim.cmd('highlight Visual guibg=#0d2927')
 
 -- Enable the LSP
-vim.cmd('LspStart')
+-- vim.cmd('LspStart')
