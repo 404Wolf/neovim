@@ -38,7 +38,7 @@ utils.map("n", "<C-t>", ":enew<CR>:term<CR>", opts)
 -- Save files and quit more easily
 utils.map("n", "<Leader><Leader>", ":", { noremap = true, silent = false })
 utils.map("n", "<C-w>", ":w<CR>", { noremap = true, silent = false })
-utils.map("n", "<C-q>", ":q<CR>", { noremap = true, silent = false })
+utils.map("n", "<C-q>", ":wqa!<CR>", { noremap = true, silent = false })
 
 -- Change how scrolling up and down works to keep cursor centered on page
 utils.map("n", "<C-d>", "<C-d>zz", opts)
