@@ -106,7 +106,6 @@ require("lazy").setup({
 		end,
 		config = function() end,
 	},
-	"ms-jpq/coq.thirdparty",
 	{
 		{
 			"romgrk/barbar.nvim",
@@ -116,11 +115,6 @@ require("lazy").setup({
 			},
 			version = "^1.0.0", -- optional: only update when a new 1.x version is released
 		},
-	},
-	{
-		"pmizio/typescript-tools.nvim",
-		dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
-		opts = {},
 	},
 	{
 		"nvimdev/lspsaga.nvim",
@@ -147,13 +141,21 @@ require("lazy").setup({
 			require("lsp-file-operations").setup()
 		end,
 	},
-	"maxmellon/vim-jsx-pretty",
 	{
 		"luckasRanarison/tailwind-tools.nvim",
 		dependencies = { "nvim-treesitter/nvim-treesitter" },
 		opts = {}, -- your configuration
+    t = {'typescript', 'typescriptreact', 'javascript'}
+	},
+	"maxmellon/vim-jsx-pretty",
+	{
+		"pmizio/typescript-tools.nvim",
+		dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
+		opts = {},
+    t = {'typescript', 'typescriptreact', 'javascript'}
 	},
 })
 
 -- Require other packages
 require("wolf")
+vim.cmd(":AerialOpen")
