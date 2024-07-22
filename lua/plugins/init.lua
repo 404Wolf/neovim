@@ -1,4 +1,5 @@
 require("plugins.autotag")
+require("plugins.autopair")
 require("plugins.nvimdev")
 require("plugins.conform")
 require("plugins.coq")
