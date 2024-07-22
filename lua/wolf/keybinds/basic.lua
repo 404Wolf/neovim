@@ -74,7 +74,3 @@ utils.map("t", "<Esc>", "<C-\\><C-n>", opts)
 -- Control q in terminal mode is forced
 utils.map("t", "<C-q>", "<C-\\><C-n>:q!<CR>", opts)
 
--- Layouts
-vim.api.nvim_create_user_command("SplitTermLayout", TerminalOnBottomLayout, {})
-utils.map("n", "<Leader>tl", ":SplitTermLayout<CR>", opts)
-

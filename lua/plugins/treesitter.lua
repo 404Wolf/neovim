@@ -1,4 +1,4 @@
-opts = {
+local opts = {
 	auto_install = true,
 	highlight = {
 		highlight = { enable = true },

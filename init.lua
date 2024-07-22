@@ -153,13 +153,6 @@ require("lazy").setup({
 		},
 	},
 	{
-		"nvimdev/lspsaga.nvim",
-		dependencies = {
-			"nvim-treesitter/nvim-treesitter",
-			"nvim-tree/nvim-web-devicons",
-		},
-	},
-	{
 		"ray-x/lsp_signature.nvim",
 		event = "VeryLazy",
 		opts = {},
@@ -205,6 +198,14 @@ require("lazy").setup({
 		dependencies = {
 			"nvim-treesitter/nvim-treesitter",
 		},
+	},
+	{
+		"aznhe21/actions-preview.nvim",
+		dependencies = { "nvim-telescope/telescope.nvim" },
+	},
+	{
+		"stevearc/dressing.nvim",
+		opts = {},
 	},
 })
 
