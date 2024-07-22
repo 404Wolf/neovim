@@ -12,7 +12,7 @@ require("conform").setup({
 		css = { "prettierd" },
 		json = { "prettierd" },
 		yaml = { "prettierd" },
-		nix = { "nixfmt" },
+		nix = { "alejandra" },
 		go = { "goimports", "gofmt" },
 		bash = { "beautysh" },
 		sh = { "beautysh" },

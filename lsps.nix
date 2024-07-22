@@ -33,6 +33,7 @@
   pkgs.texlab
   pkgs.nil
   pkgs.nixd
+  pkgs.alejandra
   (pkgs.symlinkJoin {
     name = "latex-indent";
     paths = [ pkgs.perl538Packages.LatexIndent ];
