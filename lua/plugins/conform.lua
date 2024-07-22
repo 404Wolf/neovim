@@ -1,13 +1,7 @@
-vim.lsp.buf.format({
-	filter = function(client)
-		return client.name ~= "tsserver"
-	end,
-})
-
 require("conform").setup({
 	formatters_by_ft = {
-    javascript = { "prettierd", "prettier", stop_after_first = true },
-    typescript = { "prettierd", "prettier", stop_after_first = true },
+		javascript = { "prettierd", "prettier", stop_after_first = true },
+		typescript = { "prettierd", "prettier", stop_after_first = true },
 		lua = { "stylua" },
 		css = { "prettierd" },
 		json = { "prettierd" },
