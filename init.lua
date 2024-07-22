@@ -204,9 +204,9 @@ require("lazy").setup({
 		},
 	},
 	"tpope/vim-fugitive",
+	"windwp/nvim-ts-autotag",
 })
 
 -- Require other packages
 require("wolf")
 vim.cmd(":AerialOpen")
-
