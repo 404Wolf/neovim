@@ -212,3 +212,4 @@ require("lazy").setup({
 -- Require other packages
 require("wolf")
 vim.cmd(":AerialOpen")
+vim.cmd('autocmd BufRead,BufNewFile *.ini setlocal syntax=dosini')
